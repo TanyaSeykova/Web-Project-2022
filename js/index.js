@@ -82,6 +82,6 @@ function setStyles() {
 
     document.getElementById("star-wars").style.color = colorText;
     document.getElementById("sectionWritings").style.backgroundColor = colorBackground;
-    document.getElementById("star-wars").style.fontName = fontName;
+    document.getElementById("star-wars").style.fontFamily = fontName;
     document.getElementById("star-wars").style.fontSize = fontSize + "%";
 }
