@@ -85,3 +85,25 @@ function setStyles() {
     document.getElementById("star-wars").style.fontFamily = fontName;
     document.getElementById("star-wars").style.fontSize = fontSize + "%";
 }
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "./json/data.json", true);
+xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            console.log(xhr.responseText);
+            fileIsLoaded = true;
+            dataJSON = JSON.parse(xhr.responseText);
+            removeParagraphs();
+            reset_animation(false);
+            populateWithParagraphs();
+        } else {
+            console.error(xhr.statusText);
+        }
+    }
+};
+xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+};
+xhr.send(null);
