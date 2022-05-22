@@ -5,8 +5,10 @@ function play_pause() {
     if (fileIsLoaded == true) {
         if (document.getElementById("play_pause_button").innerHTML == "▶") {
             playAnimation();
+            playAudio();
         } else {
             pauseAnimation();
+            pauseAudio();
         }
     }
 }

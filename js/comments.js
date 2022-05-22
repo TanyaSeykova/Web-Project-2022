@@ -5,7 +5,7 @@ function addComment() {
     var temp = document.getElementById('comment-template');
     var clon = temp.content.cloneNode(true);
 
-
+var comment = clon.firstElementChild;
     var commentBoxValue=document.getElementById("comment-box").value;
    
 //date and time
@@ -17,12 +17,12 @@ var datetime = "Постнато на: " + currentdate.getDate() + "/"
                 + currentdate.getMinutes();
                 // + ":" 
                 // + currentdate.getSeconds();
-    clon.children[0].innerHTML= datetime;     
+    comment.children[0].innerHTML= datetime;     
 
 
 //actual comment
-//clon.children[1] is the <p> element with actual comment text
-    clon.children[1].innerHTML= commentBoxValue;
+//cpmment.children[1] is the <p> element with actual comment text
+    comment.children[1].innerHTML= commentBoxValue;
     document.getElementById("comments-list").appendChild(clon);
     document.body.appendChild(clon);
 

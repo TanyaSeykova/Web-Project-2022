@@ -15,7 +15,7 @@
 
         <label for="audiofile">Изберете audio файл </label>
         <input type="file" id="audiofile" />
-        <audio id="audio" controls>
+        <audio id="audio" >
             <source src="" id="audiosource" />
         </audio>
     </section>
@@ -55,9 +55,10 @@
 
         <section id="commentSection">
             <template id="comment-template">
-
-                <p>date and time</p>
-                <p id="comment-text">text</p>
+                <div id="comment">
+                <p class="date-and-time">date and time</p>
+                <p class="comment-text">text</p>
+                </div>
             </template>
 
             <input type="text" id="comment-box" placeholder="Enter comment">

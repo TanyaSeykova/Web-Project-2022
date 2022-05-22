@@ -7,3 +7,16 @@ function handleFiles(event) {
 
 document.getElementById("audiofile").addEventListener("change", handleFiles, false);
 
+
+function playAudio(){
+    var audiofile = $("#audio")[0];
+    audiofile.play();
+}
+
+function pauseAudio(){
+    var audiofile = $("#audio")[0];
+    audiofile.pause();
+}
+
+
+
