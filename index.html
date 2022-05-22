@@ -10,7 +10,13 @@
 <body>
 
     <label for="inputfile">Изберете data.json файл с рефератите от Вашия компютър </label> <input type="file"
-        name="inputfile" id="inputfile">
+        name="inputfile" id="inputfile"> 
+
+    <label for="audiofile">Изберете audio файл </label> 
+        <input type="file" id="audiofile" />
+        <audio id="audio" controls>
+            <source src="" id="audiosource" />
+        </audio>
 
     <section>
         <label for="colorText">Цвят на текста: </label> <input type="color" id="colorText" name="colorText"
@@ -45,5 +51,7 @@
 
 </body>
 <script src="./js/index.js"></script>
+<script src="./js/audio.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </html>
