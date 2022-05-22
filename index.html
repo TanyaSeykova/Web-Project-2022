@@ -4,22 +4,23 @@
     <meta charset="UTF-16">
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <html>
 
 <body>
+    <section id="file-uploads">
+        <label for="inputfile">Изберете data.json файл с рефератите от Вашия компютър </label> <input type="file"
+            name="inputfile" id="inputfile">
 
-    <label for="inputfile">Изберете data.json файл с рефератите от Вашия компютър </label> <input type="file"
-        name="inputfile" id="inputfile"> 
-
-    <label for="audiofile">Изберете audio файл </label> 
+        <label for="audiofile">Изберете audio файл </label>
         <input type="file" id="audiofile" />
         <audio id="audio" controls>
             <source src="" id="audiosource" />
         </audio>
+    </section>
 
-    <section>
+    <section id="text-settings">
         <label for="colorText">Цвят на текста: </label> <input type="color" id="colorText" name="colorText"
             value="#feda4a">
         <label for="colorBackground">Цвят на фона: </label> <input type="color" id="colorBackground"
@@ -31,28 +32,54 @@
         <button id="buttonStyles">Нанеси настоящите стилове</button>
     </section>
 
-    <section id="sectionWritings">
-        <div class="fade"></div>
 
-        <section class="star-wars" id="star-wars">
+    <section id="main-content">
+        <section id="sectionWritings">
+            <div class="fade"></div>
 
-            <div class="crawl" id="crawl">
+            <section class="star-wars" id="star-wars">
 
-                <div class="title">
-                    <h1>Най-добри реферати</h1>
-                    <h2>WEB Технологии - Издание w18ed</h2>
+                <div class="crawl" id="crawl">
+
+                    <div class="title">
+                        <h1>Най-добри реферати</h1>
+                        <h2>WEB Технологии - Издание w18ed</h2>
+                    </div>
                 </div>
+            </section>
+
+
+
+        </section>
+
+
+        <section id="commentSection">
+            <template id="comment-template">
+
+                <p>date and time</p>
+                <p id="comment-text">text</p>
+            </template>
+
+            <input type="text" id="comment-box" placeholder="Enter comment">
+            <button id="post">Добави коментар</button>
+
+            <div id="comments-list">
+                <!-- тук се добавят коментарчетата -->
             </div>
         </section>
+
     </section>
 
-    <button type="button" id="play_pause_button">▶</button>
-    <button type="button" id="restart_button">↺</button>
-    <button type="button" id="fullscreen_button"><i class="material-icons">fullscreen</i></button>
+    <section id="buttons">
+        <button type="button" id="play_pause_button">▶</button>
+        <button type="button" id="restart_button">↺</button>
+        <button type="button" id="fullscreen_button"><i class="material-icons">fullscreen</i></button>
+    </section>
 
 </body>
 <script src="./js/index.js"></script>
 <script src="./js/audio.js"></script>
+<script src="./js/comments.js"></script>
 
 
 </html>
