@@ -6,6 +6,33 @@
     overflow: hidden;
     max-width: 60%;
     max-height: 600px;
+    margin-left: 100px;
+  }
+
+  #file-uploads {
+    float: left;
+    width: 10%;
+    margin: 0 1%;
+    background-color: #feda4a;
+    padding: 10px 10px 10px 10px;
+    border: 2px rgb(87, 22, 22) solid;
+    border-radius: 5px;
+    line-height: 150%;
+  }
+
+  #text-settings {
+    float: right;
+    width: 10%;
+    margin: 0;
+    padding: 10px 10px 10px 10px;
+    background-color: #feda4a;
+    border: 2px rgb(87, 22, 22) solid;
+    border-radius: 5px;
+    line-height: 150%;
+  }
+  
+  body {
+    background-color:burlywood ;
   }
   
   .fade {
@@ -71,5 +98,18 @@
 
   #main-content {
     display: flex;
+  }
+
+  #buttons {
+    margin-left: 40%;
+    padding-top: 1%;
+  }
+
+  #fullscreen-buttons {
+    margin: 40% 40% 0 0;
+    position: relative;
+    display: inline-block;
+    height: 2%;
+    width: 50%;
   }
   

@@ -23,6 +23,7 @@ function pauseAnimation() {
     document.getElementById("play_pause_button").innerHTML = "▶";
     document.getElementById("crawl").style.animationPlayState = "paused";
 }
+
 var fileIsLoaded = false;
 var dataJSON = "";
 document.getElementById('inputfile').addEventListener('change', function () {
@@ -74,21 +75,6 @@ document.getElementById("restart_button").addEventListener("click", function () 
     resetAudio();
     reset_animation(true);
 });
-
-document.getElementById("buttonStyles").addEventListener("click", setStyles);
-
-function setStyles() {
-    let colorText = document.getElementById("colorText").value;
-    let colorBackground = document.getElementById("colorBackground").value;
-    let fontName = document.getElementById("fontName").value;
-    let fontSize = document.getElementById("fontSize").value;
-
-    document.getElementById("star-wars").style.color = colorText;
-    document.getElementById("sectionWritings").style.backgroundColor = colorBackground;
-    document.getElementById("star-wars").style.fontFamily = fontName;
-    document.getElementById("star-wars").style.fontSize = fontSize + "%";
-}
-
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "./json/data.json", true);
