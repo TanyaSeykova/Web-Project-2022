@@ -17,13 +17,16 @@ function toggleFullScreen() {
 function moveButtons() {
    
     const buttons = document.getElementById("moveable-buttons");
-    console.log('hello' + buttons);
     if (!getFullScreenElement()) {
         const outOfFullScreenSection = document.getElementById("buttons");
         outOfFullScreenSection.appendChild(buttons);
+        document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) / 2 + "%";
+        
     } else {
         const fullScreenSection = document.getElementById("fullscreen-buttons");
         fullScreenSection.appendChild(buttons);
+        console.log(document.getElementById("star-wars").style.fontSize);
+        document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) * 2 + "%";
     }
 }
 (() => {

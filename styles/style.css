@@ -63,7 +63,6 @@
     position: relative;
     top: 99999px;
     transform-origin: 50% 100%;
-    
   }
   
   .crawl > .title {
@@ -111,5 +110,6 @@
     display: inline-block;
     height: 2%;
     width: 50%;
+    position: fixed;
   }
   

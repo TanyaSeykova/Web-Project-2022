@@ -23,6 +23,7 @@ function applyStyleFormChanges() {
     setStyles(styleData);
 }
 
+
 function readConfigFile() {
 
     var fr = new FileReader();
@@ -36,6 +37,7 @@ function readConfigFile() {
 (() => {
 
     document.getElementById("configfile").addEventListener("change", readConfigFile);
-    document.getElementById("buttonStyles").addEventListener("click", applyStyleFormChanges);   
+    document.getElementById("buttonStyles").addEventListener("click", applyStyleFormChanges);
+    applyStyleFormChanges();  
 
 })();

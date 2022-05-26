@@ -15,7 +15,7 @@ function play_pause() {
 
 function playAnimation() {
     document.getElementById("play_pause_button").innerHTML = "⏸";
-    document.getElementById("crawl").style.animation = "crawl 60s linear";
+    document.getElementById("crawl").style.animation = "crawl linear " + numberOfParagraphs*6 + "s";
     document.getElementById("crawl").style.animationPlayState = "running";
 }
 
@@ -39,6 +39,7 @@ document.getElementById('inputfile').addEventListener('change', function () {
     fr.readAsText(this.files[0]);
 })
 
+var numberOfParagraphs = 0;
 function populateWithParagraphs() {
     dataJSON["reports"].forEach(element => {
         const para = document.createElement("p");
@@ -46,7 +47,7 @@ function populateWithParagraphs() {
         para.appendChild(node);
         para.classList.add("report-p-class");
         document.getElementById("crawl").appendChild(para);
-
+        numberOfParagraphs++;
     });
 }
 
