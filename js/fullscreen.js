@@ -6,7 +6,6 @@ function getFullScreenElement() {
 }
 
 function toggleFullScreen() {
-    
     if (getFullScreenElement()) {
         document.exitFullscreen();
     } else {
@@ -20,15 +19,27 @@ function moveButtons() {
     if (!getFullScreenElement()) {
         const outOfFullScreenSection = document.getElementById("buttons");
         outOfFullScreenSection.appendChild(buttons);
-        document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) / 2 + "%";
+        //сложи фона на бутоните при смаляване
+        document.getElementById("moveable-buttons").style.backgroundColor = "#89320D";
+        //върни иконката за звука
+        document.getElementById("volume_slider_label").style.display = "block";
+        //намали текста
+        document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) / 1.5 + "%";
         
     } else {
         const fullScreenSection = document.getElementById("fullscreen-buttons");
         fullScreenSection.appendChild(buttons);
-        console.log(document.getElementById("star-wars").style.fontSize);
-        document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) * 2 + "%";
+        //позициониране на бутоните
+        fullScreenSection.style.position = "absolute";
+        fullScreenSection.style.bottom = "5%";
+        //махане на фона на бутоните
+        document.getElementById("moveable-buttons").style.backgroundColor = "transparent";
+        //махане на иконката за звука
+        document.getElementById("volume_slider_label").style.display = "none";
+        document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) * 1.5 + "%";
     }
 }
+
 (() => {
 
     const fullScreenButton = document.getElementById("fullscreen_button");

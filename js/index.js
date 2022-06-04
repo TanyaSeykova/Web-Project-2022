@@ -1,9 +1,9 @@
 
 document.getElementById("play_pause_button").addEventListener("click", play_pause);
-
+var isPlaying = false;
 function play_pause() {
     if (fileIsLoaded == true) {
-        if (document.getElementById("play_pause_button").innerHTML == "▶") {
+        if (document.getElementById("play_pause_button").innerHTML == "▶️") {
             playAnimation();
             playAudio();
         } else {
@@ -14,13 +14,16 @@ function play_pause() {
 }
 
 function playAnimation() {
+    isPlaying = true;
     document.getElementById("play_pause_button").innerHTML = "⏸";
-    document.getElementById("crawl").style.animation = "crawl linear " + numberOfParagraphs*6 + "s";
+    document.getElementById("crawl").style.animation = "crawl linear " + numberOfParagraphs * 7 + "s";
     document.getElementById("crawl").style.animationPlayState = "running";
+
 }
 
 function pauseAnimation() {
-    document.getElementById("play_pause_button").innerHTML = "▶";
+    isPlaying = false;
+    document.getElementById("play_pause_button").innerHTML = "▶️";
     document.getElementById("crawl").style.animationPlayState = "paused";
 }
 
@@ -65,7 +68,7 @@ function reset_animation(isReset) {
     el.offsetHeight;
     el.style.animation = null;
     if (isReset == true) {
-        if (document.getElementById("play_pause_button").innerHTML != "▶") { playAnimation(); }
+        if (document.getElementById("play_pause_button").innerHTML != "▶️") { playAnimation(); }
         else pauseAnimation();
     } else {
         pauseAnimation();
@@ -97,3 +100,19 @@ xhr.onerror = function (e) {
     console.error(xhr.statusText);
 };
 xhr.send(null);
+
+
+var crawlContainer, styleCrawlContainer;
+window.onload = function () {
+    crawlContainer = document.querySelector('.crawl');
+}
+
+document.getElementById("backButton").addEventListener("click", moveBack);
+
+function moveBack() {
+    //styleCrawlContainer = getComputedStyle(crawlContainer);
+    //console.log(document.querySelector('.crawl').style);
+    console.log(styleCrawlContainer.getPropertyValue("background-position"));
+    //document.querySelector('.crawl').style.top = "-100px";
+    console.log(document.querySelector('.crawl').style);
+}

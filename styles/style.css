@@ -1,115 +1,139 @@
 #sectionWritings {
-    
-    width: 100%;
-    height: 100%;
-    background: #000;
-    overflow: hidden;
-    max-width: 60%;
-    max-height: 600px;
-    margin-left: 100px;
+
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  max-height: 600px;
+}
+
+#file-uploads {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: fit-content;
+  background-color: #89320D;
+  padding: 10px 10px 10px 10px;
+  border: 2px rgb(87, 22, 22) solid;
+  border-radius: 5px;
+  line-height: 150%;
+  margin-right: 5%;
+  color: #B3A7B7;
+}
+
+#text-settings {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: fit-content;
+  padding: 10px 10px 10px 10px;
+  background-color: #89320D;
+  border: 2px rgb(87, 22, 22) solid;
+  border-radius: 5px;
+  line-height: 150%;
+  margin-left: 5%;
+  color: #B3A7B7;
+}
+
+body {
+  background-color: #3b0054;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 600%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 99999px;
+  transform-origin: 50% 100%;
+}
+
+.crawl>.title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl>.title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: -100px;
+    transform: rotateX(20deg) translateZ(0);
   }
 
-  #file-uploads {
-    float: left;
-    width: 10%;
-    margin: 0 1%;
-    background-color: #feda4a;
-    padding: 10px 10px 10px 10px;
-    border: 2px rgb(87, 22, 22) solid;
-    border-radius: 5px;
-    line-height: 150%;
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
   }
+}
 
-  #text-settings {
-    float: right;
-    width: 10%;
-    margin: 0;
-    padding: 10px 10px 10px 10px;
-    background-color: #feda4a;
-    border: 2px rgb(87, 22, 22) solid;
-    border-radius: 5px;
-    line-height: 150%;
-  }
+#commentSection {
+  padding: 30px;
+  background-color: #7F7382;
+  overflow-y: scroll;
   
-  body {
-    background-color:burlywood ;
-  }
-  
-  .fade {
-    position: relative;
-    width: 100%;
-    min-height: 60vh;
-    top: -25px;
-    background-image: linear-gradient(0deg, transparent, black 75%);
-    z-index: 1;
-  }
-  
-  .star-wars {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    height: 800px;
-    color: #feda4a;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 600%;
-    font-weight: 600;
-    letter-spacing: 6px;
-    line-height: 150%;
-    perspective: 400px;
-    text-align: justify;
-  }
-  
-  .crawl {
-    position: relative;
-    top: 99999px;
-    transform-origin: 50% 100%;
-  }
-  
-  .crawl > .title {
-    font-size: 90%;
-    text-align: center;
-  }
-  
-  .crawl > .title h1 {
-    margin: 0 0 100px;
-    text-transform: uppercase;
-  }
-  
-  @keyframes crawl {
-      0% {
-      top: -100px;
-      transform: rotateX(20deg)  translateZ(0);
-    }
-      100% { 
-      top: -6000px;
-      transform: rotateX(25deg) translateZ(-2500px);
-    }
-  }
+  width: 100%;
+}
 
-  #commentSection {
-    padding: 30px;
-    background-color: #8c8c8c;
-  }
+#commentSection > button {
+  width: 100%;
+}
+#comment {
+  background-color: #B3A7B7;
+}
 
-  #comment {
-    background-color: #d4d4d4;
-  }
+#main-content {
+  display: flex;
+  justify-content: center;
+  max-height: 632px;
+}
 
-  #main-content {
-    display: flex;
-  }
+#fullscreen-buttons {
+  margin: 40% 40% 0 0;
+  position: relative;
+  display: inline-block;
+  height: 2%;
+  width: 50%;
+  position: fixed;
+}
 
-  #buttons {
-    margin-left: 40%;
-    padding-top: 1%;
-  }
-
-  #fullscreen-buttons {
-    margin: 40% 40% 0 0;
-    position: relative;
-    display: inline-block;
-    height: 2%;
-    width: 50%;
-    position: fixed;
-  }
+.navigationButton {
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  padding: 0%;
   
+}
+
+
+#moveable-buttons {
+  display: flex;
+  justify-content: center;
+  background-color: #89320D;
+}
