@@ -1,0 +1,10 @@
+{
+  "reports": [
+    {
+      "name": "LaTeX"
+    },
+    {
+      "name": "CSS Properties"
+    }
+	]
+}

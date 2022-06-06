@@ -5,6 +5,14 @@ function setStyles(styleData) {
     document.getElementById("star-wars").style.fontSize = styleData["fontSize"] + "%";
 }
 
+function applyInputChanges(styleData) {
+
+    document.getElementById("colorText").value = styleData["colorText"];
+    document.getElementById("colorBackground").value = styleData["colorBackground"];
+    document.getElementById("fontName").value = styleData["fontName"];
+    document.getElementById("fontSize").value = styleData["fontSize"];
+}
+
 function applyStyleFormChanges() {
 
     const colorText = document.getElementById("colorText").value;
@@ -29,6 +37,7 @@ function readConfigFile() {
     fr.onload = function () {
         const configJSON = JSON.parse(fr.result);
         setStyles(configJSON);
+        applyInputChanges(configJSON);
     }
     fr.readAsText(this.files[0]);
 }
