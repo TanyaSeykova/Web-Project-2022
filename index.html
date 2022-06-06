@@ -11,74 +11,98 @@
     <script defer src="./js/comments.js"></script>
     <script defer src="./js/animation-styles.js"></script>
     <script defer src="./js/fullscreen.js"></script>
+    <script defer src="./js/save-animаtion.js"></script>
+    <script defer src="./js/list-animations.js"></script>
 </head>
 <html>
 
 <body>
-    <section id="file-uploads">
-        <label for="inputfile">Изберете data.json файл с рефератите от Вашия компютър </label>
-        <input type="file" name="inputfile" id="inputfile" />
+    <aside class="boxes" id="file-uploads">
+        <form id="file-form">
+            <label for="inputfile">Изберете data.json файл с рефератите от Вашия компютър </label>
+            <input type="file" name="inputfile" id="inputfile" />
 
-        <label for="configfile">Изберете config.json файл с настройки за анимация от Вашия компютър </label>
-        <input type="file" name="configfile" id="configfile" />
+            <label for="configfile">Изберете config.json файл с настройки за анимация от Вашия компютър </label>
+            <input type="file" name="configfile" id="configfile" />
 
-        <label for="audiofile">Изберете audio файл </label>
-        <input type="file" id="audiofile" />
-        <audio id="audio">
-            <source src="" id="audiosource" />
-        </audio>
-    </section>
+            <label for="audiofile">Изберете audio файл </label>
+            <input type="file" id="audiofile" />
+            <audio id="audio">
+                <source src="" id="audiosource" />
+            </audio>
 
-    <section id="main-content">
-        <section id="animationAndControls">
-            <section id="sectionWritings">
-                <div class="fade"></div>
+            <label for="animation-name">Напишете име на вашата анимация: </label>
+            <input type="text" id="animation-name" name="animation-name"/>
+            <button id="save-button">Запазете анимация</button>
+        </form>
+        
+    </aside>
 
-                <section class="star-wars" id="star-wars">
-
-                    <div class="crawl" id="crawl">
-
-                        <div class="title">
-                            <h1>Най-добри реферати</h1>
-                            <h2>WEB Технологии - Издание w18ed</h2>
+    <main>
+        <section id="main-content">
+            <section id="animationAndControls">
+                <section id="sectionWritings">
+                    <div class="fade"></div>
+    
+                    <section class="star-wars" id="star-wars">
+    
+                        <div class="crawl" id="crawl">
+    
+                            <div class="title">
+                                <h1>Най-добри реферати</h1>
+                                <h2>WEB Технологии - Издание w18ed</h2>
+                            </div>
                         </div>
-                    </div>
-
-                   <div id="fullscreen-buttons"></div>
+    
+                       <div id="fullscreen-buttons"></div>
+                    </section>
                 </section>
+                <section id="buttons">
+                    <div id="moveable-buttons">
+                        <button type="button" id="backButton" class="navigationButton">⏪</button>
+                        <button type="button" id="play_pause_button" class="navigationButton">▶️</button>
+                        <button type="button" id="forwardButton" class="navigationButton">⏩</button>
+                        <button type="button" id="restart_button" class="navigationButton">↪️</button>
+    
+                        <label for="volume_slider" id="volume_slider_label">🔊</label><input type="range" id="volume_slider" min="0" max="10"
+                            value="10">
+                        <button type="button" id="fullscreen_button" class="navigationButton">⏹️</button>
+                    </div>
+                </section>
+    
             </section>
-            <section id="buttons">
-                <div id="moveable-buttons">
-                    <button type="button" id="backButton" class="navigationButton">⏪</button>
-                    <button type="button" id="play_pause_button" class="navigationButton">▶️</button>
-                    <button type="button" id="forwardButton" class="navigationButton">⏩</button>
-                    <button type="button" id="restart_button" class="navigationButton">↪️</button>
-
-                    <label for="volume_slider" id="volume_slider_label">🔊</label><input type="range" id="volume_slider" min="0" max="10"
-                        value="10">
-                    <button type="button" id="fullscreen_button" class="navigationButton">⏹️</button>
+            <section id="commentSection">
+                <template id="comment-template">
+                    <div id="comment">
+                        <p class="date-and-time">date and time</p>
+                        <p class="comment-text">text</p>
+                    </div>
+                </template>
+    
+                <textarea type="text" id="comment-box" placeholder="Enter comment"></textarea>
+                <button id="post">Добави коментар</button>
+    
+                <div id="comments-list">
+                    <!-- тук се добавят коментарчетата -->
                 </div>
             </section>
-
         </section>
-        <section id="commentSection">
-            <template id="comment-template">
-                <div id="comment">
-                    <p class="date-and-time">date and time</p>
-                    <p class="comment-text">text</p>
-                </div>
-            </template>
 
-            <textarea type="text" id="comment-box" placeholder="Enter comment"></textarea>
-            <button id="post">Добави коментар</button>
-
-            <div id="comments-list">
-                <!-- тук се добавят коментарчетата -->
-            </div>
+        <section class="boxes" id="animation-picker">
+            <form id="picker-form">
+                <label for="saved-animations"> Изберете анимация: </label>
+                <select id="saved-animations">
+                    <!-- тук се добавят запазените анимации-->
+                </select>
+                <button>Зареди анимация</button>
+            </form>
+            
+            
         </section>
-    </section>
+    </main>
+    
 
-    <section id="text-settings">
+    <aside class="boxes" id="text-settings">
         <label for="colorText">Цвят на текста: </label>
         <input type="color" id="colorText" name="colorText" value="#feda4a">
 
@@ -92,7 +116,8 @@
         <input type="number" name="fontSize" id="fontSize" value="600">
 
         <button id="buttonStyles">Нанеси настоящите стилове</button>
-    </section>
+    </aside>
+
 
 </body>
 

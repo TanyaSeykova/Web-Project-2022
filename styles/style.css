@@ -7,7 +7,7 @@
   max-height: 600px;
 }
 
-#file-uploads {
+.boxes {
   display: flex;
   flex-direction: column;
   width: 10%;
@@ -17,22 +17,24 @@
   border: 2px rgb(87, 22, 22) solid;
   border-radius: 5px;
   line-height: 150%;
+  color: #e2d8e6;
+}
+
+#file-uploads {
   margin-right: 5%;
-  color: #B3A7B7;
 }
 
 #text-settings {
-  display: flex;
-  flex-direction: column;
-  width: 10%;
-  height: fit-content;
-  padding: 10px 10px 10px 10px;
-  background-color: #89320D;
-  border: 2px rgb(87, 22, 22) solid;
-  border-radius: 5px;
-  line-height: 150%;
   margin-left: 5%;
-  color: #B3A7B7;
+}
+
+#animation-picker {
+  margin: 5% 0 0 43%;
+  width: 15%;
+}
+
+button {
+  margin-top: 8px;
 }
 
 body {
