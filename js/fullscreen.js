@@ -37,6 +37,7 @@ function moveButtons() {
         //махане на иконката за звука
         document.getElementById("volume_slider_label").style.display = "none";
         document.getElementById("star-wars").style.fontSize = Number(document.getElementById("star-wars").style.fontSize.slice(0, -1)) * 1.5 + "%";
+        
     }
 }
 

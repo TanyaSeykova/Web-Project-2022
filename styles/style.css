@@ -7,6 +7,7 @@
   max-height: 600px;
 }
 
+
 #file-uploads {
   display: flex;
   flex-direction: column;
@@ -71,7 +72,7 @@ body {
   transform-origin: 50% 100%;
 }
 
-.crawl>.title {
+.crawl>.title{
   font-size: 90%;
   text-align: center;
 }
@@ -80,7 +81,6 @@ body {
   margin: 0 0 100px;
   text-transform: uppercase;
 }
-
 @keyframes crawl {
   0% {
     top: -100px;
@@ -97,13 +97,14 @@ body {
   padding: 30px;
   background-color: #7F7382;
   overflow-y: scroll;
-  
+
   width: 100%;
 }
 
-#commentSection > button {
+#commentSection>button {
   width: 100%;
 }
+
 #comment {
   background-color: #B3A7B7;
 }
@@ -128,7 +129,7 @@ body {
   width: 2rem;
   font-size: 1rem;
   padding: 0%;
-  
+
 }
 
 
