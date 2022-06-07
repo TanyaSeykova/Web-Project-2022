@@ -1,5 +1,4 @@
 function setStyles(styleData) {
-
     document.getElementById("star-wars").style.color = styleData["colorText"];
     document.getElementById("sectionWritings").style.backgroundColor = styleData["colorBackground"];
     document.getElementById("star-wars").style.fontFamily = styleData["fontName"];

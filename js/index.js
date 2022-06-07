@@ -105,15 +105,7 @@ xhr.send(null);
 
 var crawlContainer, styleCrawlContainer;
 window.onload = function () {
-    crawlContainer = document.querySelector('.crawl');
-}
-
-document.getElementById("backButton").addEventListener("click", moveBack);
-
-function moveBack() {
-    //styleCrawlContainer = getComputedStyle(crawlContainer);
-    //console.log(document.querySelector('.crawl').style);
-    console.log(styleCrawlContainer.getPropertyValue("background-position"));
-    //document.querySelector('.crawl').style.top = "-100px";
-    console.log(document.querySelector('.crawl').style);
+    let windowWidth = window.getComputedStyle(document.getElementById("star-wars")).width;
+    document.getElementById("star-wars").style.maxWidth = windowWidth;
+    document.getElementById("star-wars").style.minWidth = windowWidth;
 }
