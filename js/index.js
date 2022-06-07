@@ -34,16 +34,15 @@ document.getElementById('inputfile').addEventListener('change', function () {
     var fr = new FileReader();
     fr.onload = function () {
         fileIsLoaded = true;
-        removeParagraphs();
-        reset_animation(false);
         dataJSON = JSON.parse(fr.result);
-        populateWithParagraphs();
+        applyDataChanges(dataJSON);
+        
     }
     fr.readAsText(this.files[0]);
 })
 
 var numberOfParagraphs = 0;
-function populateWithParagraphs() {
+function populateWithParagraphs(dataJSON) {
     dataJSON["reports"].forEach(element => {
         const para = document.createElement("p");
         const node = document.createTextNode(element["name"]);
@@ -61,7 +60,11 @@ function removeParagraphs() {
         para.remove();
     });
 }
-
+function applyDataChanges(dataJSON) {
+    removeParagraphs();
+    reset_animation(false);
+    populateWithParagraphs(dataJSON);
+}
 function reset_animation(isReset) {
     var el = document.getElementById('crawl');
     el.style.animation = 'none';
@@ -88,9 +91,7 @@ xhr.onload = function (e) {
             console.log(xhr.responseText);
             fileIsLoaded = true;
             dataJSON = JSON.parse(xhr.responseText);
-            removeParagraphs();
-            reset_animation(false);
-            populateWithParagraphs();
+            applyDataChanges(dataJSON);
         } else {
             console.error(xhr.statusText);
         }

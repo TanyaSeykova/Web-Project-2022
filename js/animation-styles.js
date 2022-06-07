@@ -14,6 +14,11 @@ function applyInputChanges(styleData) {
     document.getElementById("fontSize").value = styleData["fontSize"];
 }
 
+function applyConfigData(configJSON) {
+    setStyles(configJSON);
+    applyInputChanges(configJSON);
+}
+
 function applyStyleFormChanges() {
 
     const colorText = document.getElementById("colorText").value;
@@ -37,8 +42,7 @@ function readConfigFile() {
     var fr = new FileReader();
     fr.onload = function () {
         const configJSON = JSON.parse(fr.result);
-        setStyles(configJSON);
-        applyInputChanges(configJSON);
+        applyConfigData(configJSON);
     }
     fr.readAsText(this.files[0]);
 }

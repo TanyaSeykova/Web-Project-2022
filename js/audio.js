@@ -1,4 +1,3 @@
-
 function handleFiles(event) {
     var files = event.target.files;
     $("#audiosource").attr("src", URL.createObjectURL(files[0]));
@@ -6,8 +5,6 @@ function handleFiles(event) {
 }
 
 document.getElementById("audiofile").addEventListener("change", handleFiles, false);
-
-
 
 function playAudio() {
     var audiofile = $("#audio")[0];
