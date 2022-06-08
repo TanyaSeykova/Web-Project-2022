@@ -1,5 +1,7 @@
-const nameAnimation = "crawl linear ";
+const nameAnimation = "crawl linear infinite ";
 const secondPerPara = 7;
+const numberOfParaInCollection = 5;
+var itCount = 0;
 
 
 document.getElementById("play_pause_button").addEventListener("click", play_pause);
@@ -19,7 +21,8 @@ function play_pause() {
 function playAnimation() {
     isPlaying = true;
     document.getElementById("play_pause_button").innerHTML = "⏸";
-    document.getElementById("crawl").style.animation = nameAnimation + numberOfParagraphs * secondPerPara + "s";
+    document.getElementById("crawl").style.animation = nameAnimation  + Math.log(100 + numberOfParagraphs) * secondPerPara + "s";
+    console.log(document.getElementById("crawl").style.animation);
     document.getElementById("crawl").style.animationPlayState = "running";
 
 }
@@ -39,23 +42,66 @@ document.getElementById('inputfile').addEventListener('change', function () {
         fileIsLoaded = true;
         dataJSON = JSON.parse(fr.result);
         applyDataChanges(dataJSON);
-        
+
     }
     fr.readAsText(this.files[0]);
 })
 
 var numberOfParagraphs = 0;
+var collectionOfParagraphs = [];
+var currentCollectionIndex = 0;
 function populateWithParagraphs(dataJSON) {
+    document.getElementById("titleReports").style.display = "block";
+    numberOfParagraphs = 0;
+    currentCollectionIndex = 0;
+    collectionOfParagraphs = [];
+
+    let currentCollection = [];
     dataJSON["reports"].forEach(element => {
         const para = document.createElement("p");
         const node = document.createTextNode(element["name"]);
         para.appendChild(node);
         para.classList.add("report-p-class");
-        document.getElementById("crawl").appendChild(para);
+        //document.getElementById("crawl").appendChild(para);
+
+        currentCollection.push(para);
         numberOfParagraphs++;
+        //console.log(numberOfParagraphs);
+        if (numberOfParagraphs % numberOfParaInCollection == 0) {
+            console.log("Ten");
+            collectionOfParagraphs.push(currentCollection);
+            currentCollection = [];
+        }
     });
+
+    if (numberOfParagraphs % numberOfParaInCollection != 0) {
+        collectionOfParagraphs.push(currentCollection);
+        currentCollection = [];
+    }
+
+    itCount = collectionOfParagraphs.length;
+    console.log(itCount);
+    addCollection();
+
 }
 
+document.getElementById("crawl").addEventListener('animationiteration', addCollection);
+
+function addCollection() {
+    currentCollectionIndex++;
+    if (currentCollectionIndex <= collectionOfParagraphs.length) {
+        console.log("Collection = " + currentCollectionIndex.toString());
+        if (currentCollectionIndex > 1) {
+            document.getElementById("titleReports").style.display = "none";
+
+        }
+        removeParagraphs();
+        collectionOfParagraphs[currentCollectionIndex - 1].forEach(para => {
+            console.log("Adding");
+            document.getElementById("crawl").appendChild(para);
+        });
+    }
+}
 function removeParagraphs() {
     const paras = document.querySelectorAll('.report-p-class');
 
@@ -111,3 +157,13 @@ window.onload = function () {
     document.getElementById("star-wars").style.maxWidth = windowWidth;
     document.getElementById("star-wars").style.minWidth = windowWidth;
 }
+
+/*var intervalId = setInterval(function() {
+    console.log(window.getComputedStyle(document.getElementById("crawl")).top);
+    if (window.getComputedStyle(document.getElementById("crawl")).top > 0) {
+        var el = document.getElementById('crawl');
+        el.style.animation = 'none';
+        el.style.animation = null;
+        document.getElementById("crawl").style.animation = nameAnimation + Math.log(100 + numberOfParagraphs) * secondPerPara + "s";
+    }
+  }, 500);*/
