@@ -10,6 +10,7 @@ function listAnimations() {
 }
 function fillAnimationList(animationNames) {
     const animationList = document.getElementById('saved-animations');
+    console.log(animationNames);
     for (let name of animationNames) {
         let newOption = document.createElement('option');
         newOption.innerText = name['name'];

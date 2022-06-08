@@ -1,3 +1,6 @@
+const nameAnimation = "crawl linear ";
+const secondPerPara = 7;
+
 
 document.getElementById("play_pause_button").addEventListener("click", play_pause);
 var isPlaying = false;
@@ -16,7 +19,7 @@ function play_pause() {
 function playAnimation() {
     isPlaying = true;
     document.getElementById("play_pause_button").innerHTML = "⏸";
-    document.getElementById("crawl").style.animation = "crawl linear " + numberOfParagraphs * 7 + "s";
+    document.getElementById("crawl").style.animation = nameAnimation + numberOfParagraphs * secondPerPara + "s";
     document.getElementById("crawl").style.animationPlayState = "running";
 
 }
@@ -88,7 +91,6 @@ xhr.open("GET", "./json/data.json", true);
 xhr.onload = function (e) {
     if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-            console.log(xhr.responseText);
             fileIsLoaded = true;
             dataJSON = JSON.parse(xhr.responseText);
             applyDataChanges(dataJSON);
