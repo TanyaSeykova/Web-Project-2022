@@ -22,6 +22,7 @@ function playAnimation() {
     isPlaying = true;
     document.getElementById("play_pause_button").innerHTML = "⏸";
     document.getElementById("crawl").style.animation = nameAnimation  + Math.log(100 + numberOfParagraphs) * secondPerPara + "s";
+    document.getElementById("crawl").style.animationIterationCount = itCount;
     console.log(document.getElementById("crawl").style.animation);
     document.getElementById("crawl").style.animationPlayState = "running";
 
@@ -80,7 +81,6 @@ function populateWithParagraphs(dataJSON) {
     }
 
     itCount = collectionOfParagraphs.length;
-    console.log(itCount);
     addCollection();
 
 }

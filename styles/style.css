@@ -6,6 +6,7 @@
   overflow: hidden;
   max-height: 600px;
 }
+
 #fileNavigation {
   width: 10%;
   margin-right: 5%;
@@ -28,6 +29,9 @@
   color: #e2d8e6;
 }
 
+.boxes > hr {
+  width: 100%;
+}
 input {
   max-width: 95%;
 }
