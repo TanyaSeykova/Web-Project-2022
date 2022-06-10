@@ -41,15 +41,22 @@ function readConfigFile() {
     var fr = new FileReader();
     fr.onload = function () {
         const configJSON = JSON.parse(fr.result);
-        applyConfigData(configJSON);
+        if (checkData(configJSON)) applyConfigData(configJSON);
     }
     fr.readAsText(this.files[0]);
 }
 
+function checkData(configJSON) {
+    if (configJSON["colorText"] == undefined || configJSON["colorBackground"] == undefined || configJSON["fontName"] == undefined || configJSON["fontSize"] == undefined) {
+        window.alert("Избраният конфигурационен файл не е в правилния формат. Можете да видите примерния файл, за да видите правилния формат.");
+        return false;
+    }
+    return true;
+}
 (() => {
 
     document.getElementById("configfile").addEventListener("change", readConfigFile);
     document.getElementById("buttonStyles").addEventListener("click", applyStyleFormChanges);
-    applyStyleFormChanges();  
+    applyStyleFormChanges();
 
 })();
