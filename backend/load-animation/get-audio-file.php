@@ -7,6 +7,7 @@
 
     ob_clean();
     flush();
+  
     readfile($file);
 
     exit;

@@ -1,0 +1,466 @@
+{
+  "reports": [
+    {
+      "name": "HTML5 - част 1 семантични тагове, тагове за форми. Примери."
+    },
+    {
+      "name": "Latex - сравнение с HTML"
+    },
+    {
+      "name": "CSS: стилове, класове, селектори"
+    },
+    {
+      "name": "CSS: layouts, box model"
+    },
+    {
+      "name": "CSS: layouts, flexbox"
+    },
+    {
+      "name": "Новости в Php 8+"
+    },
+    {
+      "name": "Анимации с CSS с използване на трансформации"
+    },
+    {
+      "name": "Еммет синтаксис"
+    },
+    {
+      "name": "DOM дърво, обхождане и манипулация"
+    },
+    {
+      "name": "Работа със сесии и cookies (от страна насървъра и клиента). Local Storage API"
+    },
+    {
+      "name": "HTML мета-тагове и SEO"
+    },
+    {
+      "name": "Протокол HTTP версия 2.0+"
+    },
+    {
+      "name": "CSS Preprocessor/LESS и SASS"
+    },
+    {
+      "name": "External Data Representation (XDR)"
+    },
+    {
+      "name": "Svelte web tool"
+    },
+    {
+      "name": "Fetch API and XHR"
+    },
+    {
+      "name": "Използване на git за уеб разработка - добри практики"
+    },
+    {
+      "name": "Network Etiquette - общуване в уеб"
+    },
+    {
+      "name": "Инструменти за стрес-тестове на уеб приложения"
+    },
+    {
+      "name": "Тестване на уеб приложения със Selenium web driver. Примери."
+    },
+    {
+      "name": "Платформи за колаборативна работа по софтуерни и уеб проекти (zoom, teams, jitsi, etc) и отдалечено екстремно програмиране"
+    },
+    {
+      "name": "CSS modules and Interoperable CSS"
+    },
+    {
+      "name": "Framework7 - разработка на уеб приложения за Android и iOS"
+    },
+    {
+      "name": "Mobx - управление на състоянието"
+    },
+    {
+      "name": "URL rewriting"
+    },
+    {
+      "name": "Clipping и Masking в CSS"
+    },
+    {
+      "name": "Оценка на javascript приложенията"
+    },
+    {
+      "name": "CSS регресивно тестване  (CasperJS), Библиотеки phantomjs и PhantomCSS. Resemble.js: SlimerJS"
+    },
+    {
+      "name": "Styled JSX"
+    },
+    {
+      "name": "Responsive images"
+    },
+    {
+      "name": "CSS Shapes"
+    },
+    {
+      "name": "Multi-touch Web Development"
+    },
+    {
+      "name": "Тестване с Jestjs"
+    },
+    {
+      "name": "Високопроизводителни анимации за уеб"
+    },
+    {
+      "name": "Компресиране на текст в уеб"
+    },
+    {
+      "name": "Компресиране на изображения в уеб"
+    },
+    {
+      "name": "Производителност при зареждане на скриптове в уеб"
+    },
+    {
+      "name": "Shadow DOM 101"
+    },
+    {
+      "name": "Shadow DOM 201, CSS and Styling. Advanced Concepts & DOM APIs"
+    },
+    {
+      "name": "PostCSS - преобразуване на CSS с JavaScript"
+    },
+    {
+      "name": "HTML template "
+    },
+    {
+      "name": "Обектно ориентиран CSS (OOCSS)"
+    },
+    {
+      "name": "HTTPS и HTTP - сигурност в PHP"
+    },
+    {
+      "name": "Прецизно аудио в Уеб"
+    },
+    {
+      "name": "Скалируема и модулна архитектура за CSS (smacss)"
+    },
+    {
+      "name": "Изграждане на 3D в Уеб"
+    },
+    {
+      "name": "WebSocket с PHP"
+    },
+    {
+      "name": "Приложения с PHP и MySql на AWS"
+    },
+    {
+      "name": "Прихващане на аудио и видео в HTML5"
+    },
+    {
+      "name": "Drag and Drop"
+    },
+    {
+      "name": "Библиотека jQuery"
+    },
+    {
+      "name": "MongoDB за уеб приложения. MEAN стек."
+    },
+    {
+      "name": "Добри и лоши практики при изграждане и софтуерната архитектура на уеб сайтове"
+    },
+    {
+      "name": "Nginx. Архитектура, инсталиране, конфигуриране, виртуални хостове."
+    },
+    {
+      "name": "Apache. Архитектура, инсталиране, конфигуриране, виртуални хостове."
+    },
+    {
+      "name": "Приложение на видовете UML диаграми за Уеб"
+    },
+    {
+      "name": "Apolo graphql"
+    },
+    {
+      "name": "Web workers"
+    },
+    {
+      "name": "Angular.js "
+    },
+    {
+      "name": "Mustache и Handlebars темплейти"
+    },
+    {
+      "name": "Bootstrap"
+    },
+    {
+      "name": "Gatsby JS - генератори на статични сайтове"
+    },
+    {
+      "name": "Генератор на статични сайтове - Jekyll"
+    },
+    {
+      "name": "Phoenix"
+    },
+    {
+      "name": "ReactJS "
+    },
+    {
+      "name": "Bulma css framework. Шаблони, примери."
+    },
+    {
+      "name": "ECMAScript 2016/6/ ES 7+"
+    },
+    {
+      "name": "PHP 7+ (новости спрямо 5+)"
+    },
+    {
+      "name": "JavaScript Lint"
+    },
+    {
+      "name": "Foundation framework"
+    },
+    {
+      "name": "Уеб компоненти. Примери/демо."
+    },
+    {
+      "name": "Hypertext Transfer Protocol (HTTP/1.1): Authentication. Примери."
+    },
+    {
+      "name": "PHP Package Development Standards. Coding styles."
+    },
+    {
+      "name": "Laravel Web Framework"
+    },
+    {
+      "name": "Споделяне на ресурси от различни източници (CORS). Примери."
+    },
+    {
+      "name": "WebVTT (Web Video Text Tracks)"
+    },
+    {
+      "name": "Аудио филтри за уеб. Примери."
+    },
+    {
+      "name": "JSON Web Token (JWT), JSON Web Signature (JWS), JSON Web Encryption (JWE), JSON Web Algorithms (JWA)"
+    },
+    {
+      "name": "HammerJS - поддръжка на жестове в уеб приложенията"
+    },
+    {
+      "name": "Разгръщане на уеб приложения с Apache/Php под Docker под Windows"
+    },
+    {
+      "name": "Progressive Web Apps(PWA)"
+    },
+    {
+      "name": "WebAssembly-основи, примери"
+    },
+    {
+      "name": "Технология Blazor"
+    },
+    {
+      "name": "imba"
+    },
+    {
+      "name": "Micro Frontends"
+    },
+    {
+      "name": "GraphQL - принципи. Интеграция с Php. Примери."
+    },
+    {
+      "name": "WebExtensions - разширения за firefox"
+    },
+    {
+      "name": "Писане на хипертекс (html) посредством Kotlin DSL"
+    },
+    {
+      "name": "Elasticsearch с php"
+    },
+    {
+      "name": "Web Performance Timing APIs"
+    },
+    {
+      "name": "Тестване на уеб приложения със Cypress"
+    },
+    {
+      "name": "Полезни разширения за разработката на уеб с Visual Code Editor"
+    },
+    {
+      "name": "Работа с кампании (UTM)"
+    },
+    {
+      "name": "NativeScript"
+    },
+    {
+      "name": "Coffeescript"
+    },
+    {
+      "name": "Виртуална реалност в уеб - WebVR. Примери."
+    },
+    {
+      "name": "Motion UI - създаване на CSS анимации"
+    },
+    {
+      "name": "Разработване на достъпни уеб приложения - ARIA spec. "
+    },
+    {
+      "name": "Опълномощаване с OAuth2 (authorization)"
+    },
+    {
+      "name": "Уязвимости в уеб приложения - инжекции (OWASP-A1). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - дефектна аутентикация (OWASP-A2). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - излагане на чуствителни данни (OWASP-A3). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения -  външни XML данни (OWASP-A4). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения -  дефектен контрол на достъпа (OWASP-A5). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - дефектна конфигурация на сигурността (OWASP-A6). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - XSS - изпълнение на външни скриптове (OWASP-A7). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - несигурна десериализация (OWASP-A8). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - използване на компоненти с известни уязвимости (OWASP-A9). Примери."
+    },
+    {
+      "name": "Уязвимости в уеб приложения - недостатъчно наблюдение и водене на журнални файлове  (OWASP-A10). Примери."
+    },
+    {
+      "name": "Микроформати - видове. Примери. "
+    },
+    {
+      "name": "Софтуерни шаблони за създаване (в php)"
+    },
+    {
+      "name": "Софтуерни шаблони; структурни (в php)"
+    },
+    {
+      "name": "Софтуерни шаблони за поведение (в php)"
+    },
+    {
+      "name": "Софтуерни шаблони - други (в php)"
+    },
+    {
+      "name": "Създаване на диаграми с chartjs. Примери, добри практики. Видове диаграми."
+    },
+    {
+      "name": "Accelerated Mobile Pages (AMP)"
+    },
+    {
+      "name": "Стартиране на Lamp приложение посредством Kubernetes"
+    },
+    {
+      "name": "Тестване на уеб приложения със Selenoid"
+    },
+    {
+      "name": "Постоянна интеграция на уеб приложения с Concourse CI"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Servant"
+    },
+    {
+      "name": "Разработване на мулти-тенант приложения с Php"
+    },
+    {
+      "name": "Configure SSL on XAMPP"
+    },
+    {
+      "name": "WebRTC - принципи на работа. WebRTC с Php"
+    },
+    {
+      "name": "Използване на SVG в уеб"
+    },
+    {
+      "name": "Автоматизирано тестване в Php. PhpUnit."
+    },
+    {
+      "name": "HTML 5 Geolocation API"
+    },
+    {
+      "name": "Препоръки за сигурност за студенти в уеб. Генериране и използване на цифров подпис."
+    },
+    {
+      "name": "Криптографско API в Web"
+    },
+    {
+      "name": "Интернационализация с JavaScript. Globalize."
+    },
+    {
+      "name": "The App Shell model архитектура for Progressive Web App (PWA)"
+    },
+    {
+      "name": "Запис на потребителско видео през уеб"
+    },
+    {
+      "name": "Уеб технологиите в разработването на мобилни приложения с React Native"
+    },
+    {
+      "name": "motion UI"
+    },
+    {
+      "name": "Инсталиране и настройка на Apache сървър под линукс и Windows. Активиране на vhost и https. "
+    },
+    {
+      "name": "Frontend интернационализация на уеб приложения"
+    },
+    {
+      "name": "Safe Exam Browser (SEB) и SEBConfigTool - архитектура, настройки и начини на употреба."
+    },
+    {
+      "name": "OpenID Connect"
+    },
+    {
+      "name": "CSS Grid"
+    },
+    {
+      "name": "Session and state management in ASP.NET Core"
+    },
+    {
+      "name": "Spring Boot + Session Management"
+    },
+    {
+      "name": "Real-world bad practices in HTML"
+    },
+    {
+      "name": "Изграждане на настолни приложения посредством уеб технологии (Electron)"
+    },
+    {
+      "name": "Добри практики в PHP. Примери."
+    },
+    {
+      "name": "Разлики при криптиране, хеширане и посоляване (salt vs. pepper)"
+    },
+    {
+      "name": "Шаблон за уеб тестване blackhole-proxy"
+    },
+    {
+      "name": "WebXR"
+    },
+    {
+      "name": "Създаване на тестове за уеб посредством headless браузър "
+    },
+    {
+      "name": "Jenkins Pipeline"
+    },
+    {
+      "name": "Новият подход за ранкиране в гугъл: Core Web Vitals"
+    },
+    {
+      "name": "Онион рутиране"
+    },
+    {
+      "name": "Browser Object Model (BOM)"
+    },
+    {
+      "name": "CSS Object Model (CSSOM),"
+    },
+    {
+      "name": "JSONP и JSON"
+    }
+  ]
+}

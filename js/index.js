@@ -5,7 +5,10 @@ var itCount = 0;
 
 
 document.getElementById("play_pause_button").addEventListener("click", play_pause);
+
+
 var isPlaying = false;
+
 function play_pause() {
     if (fileIsLoaded == true) {
         if (document.getElementById("play_pause_button").innerHTML == "▶️") {
@@ -17,6 +20,8 @@ function play_pause() {
         }
     }
 }
+
+
 
 function playAnimation() {
     isPlaying = true;
@@ -32,6 +37,12 @@ function pauseAnimation() {
     document.getElementById("play_pause_button").innerHTML = "▶️";
     document.getElementById("crawl").style.animationPlayState = "paused";
 }
+
+
+
+
+
+
 
 var fileIsLoaded = false;
 var dataJSON = "";
@@ -81,6 +92,7 @@ function populateWithParagraphs(dataJSON) {
 
     itCount = collectionOfParagraphs.length;
     console.log(itCount);
+    
     addCollection();
 
 }
@@ -91,6 +103,7 @@ function addCollection() {
     currentCollectionIndex++;
     if (currentCollectionIndex <= collectionOfParagraphs.length) {
         console.log("Collection = " + currentCollectionIndex.toString());
+        
         if (currentCollectionIndex > 1) {
             document.getElementById("titleReports").style.display = "none";
 

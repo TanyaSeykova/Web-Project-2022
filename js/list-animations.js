@@ -1,12 +1,17 @@
+
+
+
 function listAnimations() {
     fetch('./backend/list-animations/list-animations.php')
-    .then(res => res.json())
-    .then(data => {
-        if(data.status === "success") {
-            return data.animationNames;
-        }
-    })
-    .then(animationNames => fillAnimationList(animationNames));
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === "success") {
+
+                fillAnimationList(data.animationNames);
+                return data.animationNames;
+            }
+            
+        })
 }
 function fillAnimationList(animationNames) {
     const animationList = document.getElementById('saved-animations');
@@ -17,6 +22,9 @@ function fillAnimationList(animationNames) {
         animationList.appendChild(newOption);
     }
 }
+
+
+
 (() => {
     listAnimations();
 })();

@@ -14,6 +14,8 @@
     <script defer src="./js/save-animаtion.js"></script>
     <script defer src="./js/list-animations.js"></script>
     <script defer src="./js/load-animation.js"></script>
+   
+
 </head>
 <html>
 
@@ -46,6 +48,7 @@
                     <!-- тук се добавят запазените анимации-->
                 </select>
                 <button>Зареди анимация</button>
+                <p id="no-animations-error-message" style="display:none">Списъкът с анимации е празен.</p>
             </form>
         </section>
     </section>
@@ -73,7 +76,7 @@
                     <div id="moveable-buttons">
                         <!--<button type="button" id="backButton" class="navigationButton">⏪</button>-->
                         <button type="button" id="play_pause_button" class="navigationButton">▶️</button>
-                        <!--<button type="button" id="forwardButton" class="navigationButton">⏩</button>-->
+                        <!-- <button type="button" id="forward_button" class="navigationButton">⏩</button> -->
                         <button type="button" id="restart_button" class="navigationButton">↪️</button>
 
                         <label for="volume_slider" id="volume_slider_label">🔊</label><input type="range"
@@ -103,7 +106,6 @@
 
     </main>
 
-
     <aside class="boxes" id="text-settings">
         <label for="colorText">Цвят на текста: </label>
         <input type="color" id="colorText" name="colorText" value="#feda4a">
@@ -118,7 +120,6 @@
         <input type="number" name="fontSize" id="fontSize" value="600">
 
         <button id="buttonStyles">Нанеси настоящите стилове</button>
-    </aside>
 
 
 </body>
