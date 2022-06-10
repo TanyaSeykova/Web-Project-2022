@@ -14,10 +14,13 @@ function play_pause() {
         if (document.getElementById("play_pause_button").innerHTML == "▶️") {
             playAnimation();
             playAudio();
+            
         } else {
             pauseAnimation();
             pauseAudio();
         }
+    } else {
+        window.alert("Файл с данни не е зареден или заредения файл не е в правилния формат.");
     }
 }
 
@@ -27,7 +30,7 @@ function playAnimation() {
     isPlaying = true;
     document.getElementById("play_pause_button").innerHTML = "⏸";
     document.getElementById("crawl").style.animation = nameAnimation  + Math.log(100 + numberOfParagraphs) * secondPerPara + "s";
-    console.log(document.getElementById("crawl").style.animation);
+    document.getElementById("crawl").style.animationIterationCount = itCount;
     document.getElementById("crawl").style.animationPlayState = "running";
 
 }
@@ -68,18 +71,20 @@ function populateWithParagraphs(dataJSON) {
     collectionOfParagraphs = [];
 
     let currentCollection = [];
+    if(dataJSON["reports"] == undefined) {
+        window.alert("Форматът на json файлът е неправилен. Проверете примерните файлове, за да видите коректния формат.");
+        fileIsLoaded = false;
+        return;
+    }
     dataJSON["reports"].forEach(element => {
         const para = document.createElement("p");
         const node = document.createTextNode(element["name"]);
         para.appendChild(node);
         para.classList.add("report-p-class");
-        //document.getElementById("crawl").appendChild(para);
 
         currentCollection.push(para);
         numberOfParagraphs++;
-        //console.log(numberOfParagraphs);
         if (numberOfParagraphs % numberOfParaInCollection == 0) {
-            console.log("Ten");
             collectionOfParagraphs.push(currentCollection);
             currentCollection = [];
         }
@@ -91,8 +96,6 @@ function populateWithParagraphs(dataJSON) {
     }
 
     itCount = collectionOfParagraphs.length;
-    console.log(itCount);
-    
     addCollection();
 
 }
@@ -102,15 +105,12 @@ document.getElementById("crawl").addEventListener('animationiteration', addColle
 function addCollection() {
     currentCollectionIndex++;
     if (currentCollectionIndex <= collectionOfParagraphs.length) {
-        console.log("Collection = " + currentCollectionIndex.toString());
-        
         if (currentCollectionIndex > 1) {
             document.getElementById("titleReports").style.display = "none";
 
         }
         removeParagraphs();
         collectionOfParagraphs[currentCollectionIndex - 1].forEach(para => {
-            console.log("Adding");
             document.getElementById("crawl").appendChild(para);
         });
     }
@@ -170,13 +170,3 @@ window.onload = function () {
     document.getElementById("star-wars").style.maxWidth = windowWidth;
     document.getElementById("star-wars").style.minWidth = windowWidth;
 }
-
-/*var intervalId = setInterval(function() {
-    console.log(window.getComputedStyle(document.getElementById("crawl")).top);
-    if (window.getComputedStyle(document.getElementById("crawl")).top > 0) {
-        var el = document.getElementById('crawl');
-        el.style.animation = 'none';
-        el.style.animation = null;
-        document.getElementById("crawl").style.animation = nameAnimation + Math.log(100 + numberOfParagraphs) * secondPerPara + "s";
-    }
-  }, 500);*/
