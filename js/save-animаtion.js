@@ -86,11 +86,7 @@ function handleSaveAnimation() {
     if(!validateInput(animationData['name'], inputFile, audioFile)) {
         return;
     }
-    console.log(animationData);
-    console.log(inputFile);
-    console.log(audioFile);
     const saveData = prepareSaveData(animationData, inputFile, audioFile);
-    console.log(saveData);
     saveAnimation(saveData);
 
 }

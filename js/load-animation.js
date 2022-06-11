@@ -1,5 +1,3 @@
-//import { applyConfigData } from './animation-styles.js';
-
 function loadData(animationName) {
     const fd = new FormData();
     fd.append('animationName', animationName);
@@ -51,10 +49,8 @@ function loadAudioFile(audioPath) {
         const srcAudio = document.getElementById("audiosource");
         srcAudio.src = url;
         document.getElementById('audio').load();
-        //URL.revokeObjectURL(url);
     });
 }
-
 
 
 (() => {

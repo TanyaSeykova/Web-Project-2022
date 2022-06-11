@@ -1,6 +1,3 @@
-
-
-
 function listAnimations() {
     fetch('./backend/list-animations/list-animations.php')
         .then(res => res.json())

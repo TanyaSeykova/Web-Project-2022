@@ -1,6 +1,6 @@
 <?php
-    require_once('../db/db_util.php');
 
+    require_once('../db/db_util.php');
 
     try {
         $db = new DB();
