@@ -54,16 +54,16 @@ body {
 .star-wars {
   display: flex;
   justify-content: center;
+  text-align: center;
   position: relative;
   height: 800px;
-  color: #feda4a;
-  font-family: 'Pathway Gothic One', sans-serif;
+  color: white;
+  font-family: 'Arial', sans-serif;
   font-size: 600%;
-  font-weight: 600;
+  font-weight:bold;
   letter-spacing: 6px;
   line-height: 150%;
   perspective: 400px;
-  text-align: justify;
 }
 
 .crawl {
