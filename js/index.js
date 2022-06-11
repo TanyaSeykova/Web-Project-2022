@@ -132,6 +132,7 @@ function reset_animation(isReset) {
 document.getElementById("restart_button").addEventListener("click", function () {
     resetAudio();
     reset_animation(true);
+    populateWithParagraphs(dataJSON);
 });
 
 var xhr = new XMLHttpRequest();
