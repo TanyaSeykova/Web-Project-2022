@@ -21,9 +21,10 @@ var datetime = "Постнато на: " + currentdate.getDate() + "/"
 
 
 //actual comment
-//cpmment.children[1] is the <p> element with actual comment text
+//comment.children[1] is the <p> element with actual comment text
     comment.children[1].innerHTML= commentBoxValue;
     document.getElementById("comments-list").appendChild(clon);
     document.body.appendChild(clon);
 
   }
+

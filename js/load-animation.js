@@ -30,7 +30,7 @@ function loadConfig(configPath) {
     const queryConfigPath = encodeURIComponent('configPath') + '=' + encodeURIComponent(configPath);
     fetch('./backend/load-animation/get-config-data.php?' + queryConfigPath)
     .then(res => res.json())
-    .then(configData => applyConfigData(configData)); //вика applyConfigData от animation-styles.js
+    .then(configData => applyConfigData(configData.message)); //вика applyConfigData от animation-styles.js
     
 }
 
@@ -38,7 +38,7 @@ function loadDataFile(dataPath) {
     const queryDataPath = encodeURIComponent('dataPath') + '=' + encodeURIComponent(dataPath);
     fetch('./backend/load-animation/get-text-data.php?' + queryDataPath)
     .then(res => res.json())
-    .then(data => applyDataChanges(data)); //вика applyDataChanges от index.js
+    .then(data => applyDataChanges(data.message)); //вика applyDataChanges от index.js
 }
 
 function loadAudioFile(audioPath) {
@@ -46,6 +46,7 @@ function loadAudioFile(audioPath) {
     fetch('./backend/load-animation/get-audio-file.php?' + queryAudioPath)
     .then(res => res.blob())
     .then(audioBlob => {
+        
         const url = URL.createObjectURL(audioBlob);
         const srcAudio = document.getElementById("audiosource");
         srcAudio.src = url;
@@ -54,11 +55,22 @@ function loadAudioFile(audioPath) {
     });
 }
 
+
+
 (() => {
     const pickerForm = document.getElementById('picker-form');
     pickerForm.addEventListener('submit', (event) => {
-        const pickedAnimtaion = document.getElementById('saved-animations').value;
-        loadData(pickedAnimtaion);
+        const pickedAnimtaion = document.getElementById('saved-animations');
+        if(pickedAnimtaion.childElementCount == 0) {
+            document.getElementById("no-animations-error-message").style.display="inline";
+
+        }
+        else{
+            document.getElementById("no-animations-error-message").style.display="none";
+
+        loadData(pickedAnimtaion.value);
+        }
         event.preventDefault();
+        
     }); 
 })();

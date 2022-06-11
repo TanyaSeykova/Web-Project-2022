@@ -27,7 +27,7 @@ function getAnimationInfo() {
     return animationData;
 }
 
-function valdateName(animationName) {
+function validateName(animationName) {
     if (animationName === "") {
         return false;
     }
@@ -55,13 +55,16 @@ function validateAudioFile(audioFile) {
 }
 function validateInput(animationName, dataFile, audioFile) {
 
-    if(!valdateName(animationName)) {
+    if(!validateName(animationName)) {
+        window.alert("Не е добавено име на анимацията.");
         return false;
     }
     if(!validateDataFile(dataFile)) {
+        window.alert("Не е добавен data.json файл.");
         return false;
     }
     if(!validateAudioFile(audioFile)) {
+        window.alert("Не е добавен аудио файл.");
         return false;
     }
     return true;
@@ -83,9 +86,11 @@ function handleSaveAnimation() {
     if(!validateInput(animationData['name'], inputFile, audioFile)) {
         return;
     }
-
+    console.log(animationData);
+    console.log(inputFile);
+    console.log(audioFile);
     const saveData = prepareSaveData(animationData, inputFile, audioFile);
-    
+    console.log(saveData);
     saveAnimation(saveData);
 
 }
