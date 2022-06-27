@@ -37,10 +37,10 @@ function loadCommentsFile(commentsPath){
 function postComments(comments){
     clearComments();
 
-    console.log("comments posted: " + comments);
     for (let i = 0; i < comments.length; i++) {
-       console.log(comments[i]["timestamp"] + " : " + comments[i]["commentText"]);
-        setTimeout(setComment(comments[i]["commentText"]), comments[i]["timestamp"]);
+      // console.log(comments[i]["tag"] + " - tag" + comments[i]["postTime"] + "-postTime " + comments[i]["commentText"] + "-koment" + comments[i]["timestamp"] + "-timestamp");
+       
+        setTimeout(setComment,  comments[i]["timestamp"], comments[i]["tag"],comments[i]["postTime"], comments[i]["commentText"]);
     }
 
 
@@ -80,16 +80,17 @@ function loadAudioFile(audioPath) {
 }
 
 
-function setComment(commentText) {
+function setComment(tag, postTime, commentText, timestamp) {
     var temp = document.getElementById('comment-template');
     var clon = temp.content.cloneNode(true);
-  
     var comment = clon.firstElementChild;
-    var commentBoxValue = commentText;
+ 
   
     //actual comment
-    //comment.children[2] is the <p> element with actual comment text
-    comment.children[2].innerHTML = commentBoxValue;
+    comment.children[0].innerHTML = tag;
+    comment.children[1].innerHTML = postTime;
+    comment.children[2].innerHTML = commentText;
+    comment.children[3].innerHTML = timestamp;
     document.getElementById("comments-list").appendChild(clon);
     document.body.appendChild(clon);
   

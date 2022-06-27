@@ -90,13 +90,26 @@
                 <template id="comment-template">
                     <div id="comment">
                         <p class="tag">tag</p>
-                        <p class="timestamp">timestamp</p>
+                        <p class="post-time">time</p>
                         <p class="comment-text">text</p>
+                        <p class="timestamp">timestamp</p>            
                     </div>
                 </template>
 
                 <textarea type="text" id="comment-box" placeholder="Enter comment"></textarea>
+                <select id="tag-select">
+                    <option value="Субтитри">Субтитри</option>
+                    <option value="Коментар">Коментар</option>
+                    
+                    <option value="Грешка">Грешка</option>
+
+
+                </select>
                 <button id="post">Добави коментар</button>
+
+                <button id="sort-comments">Покажи коментари</button>
+                <button id="sort-subtitles">Покажи субтитри</button>
+                <button id="sort-mistakes">Покажи грешки</button>
 
                 <div id="comments-list">
                     <!-- тук се добавят коментарчетата -->

@@ -141,3 +141,7 @@ body {
   background-color: #89320D;
   align-items: center;
 }
+
+.timestamp {
+  display: none;
+}

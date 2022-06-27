@@ -33,25 +33,24 @@ function getComments() {
     const comments = document.getElementById("comments-list");
     var commentsData = [];
 
-
-    console.log("childElCount is " + comments.childElementCount);
-    //console.log("hopefully timestamp is " +  comments.children[0].children[2].innerHTML);
     for(var i = 0; i<comments.childElementCount; i++){
 
-        var timestamp = comments.children[i].children[1].innerHTML;
+        var tag = comments.children[i].children[0].innerHTML;
+        var postTime = comments.children[i].children[1].innerHTML;
         var commentText = comments.children[i].children[2].innerHTML;
+        var timestamp = comments.children[i].children[3].innerHTML;
 
-        console.log("timestamp is " + timestamp + " comment: " + commentText );
+        //console.log("tag is " + tag + " posttime: " + postTime + " comment: " + commentText+ " timestamp: " + timestamp   );
         
         commentsData.push({
+            tag: tag,
+            postTime: postTime,
             commentText: commentText, 
             timestamp: timestamp,
         });
     }
 
-    console.log(commentsData);
-
-
+   
     return commentsData;
 }
 

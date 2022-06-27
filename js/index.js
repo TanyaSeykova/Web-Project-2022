@@ -1,6 +1,6 @@
 const nameAnimation = "crawl linear infinite ";
 const secondPerPara = 7;
-var numberOfParaInCollection = 5;
+const numberOfParaInCollection = 5;
 var itCount = 0;
 
 
@@ -18,14 +18,12 @@ function play_pause() {
             
             if (pauseStartTime == 0) startTime = new Date();
             if(pauseStartTime != 0 ) pauseEndTime = new Date();    
-            console.log("start and end is " + pauseStartTime + " , " + pauseEndTime);   
             pausedTime += pauseEndTime - pauseStartTime;
 
         } else {
             pauseAnimation();
             pauseAudio();
             pauseStartTime = new Date();
-            console.log("start and end is " + pauseStartTime + " , " + pauseEndTime);   
             
         }
     } else {
@@ -173,38 +171,10 @@ xhr.onerror = function (e) {
 };
 xhr.send(null);
 
-function handleLinesNumber(responseText) {
-    linesJSON = JSON.parse(responseText);
-    let lines = linesJSON["numberOfLines"];
-    if (lines == undefined || !Number.isInteger(lines) || lines < 1) {
-        lines = 5;
-    }
-
-    numberOfParaInCollection = lines;
-}
-var xhrLines = new XMLHttpRequest();
-xhrLines.open("GET", "./json/linesConfig.json", true);
-xhrLines.onload = function (e) {
-    if (xhrLines.readyState === 4) {
-        if (xhrLines.status === 200) {
-            handleLinesNumber(xhrLines.responseText);
-        } else {
-            console.error(xhrLines.statusText);
-        }
-    }
-};
-xhrLines.onerror = function (e) {
-    console.error(xhrLines.statusText);
-};
-xhrLines.send(null);
-
 
 var crawlContainer, styleCrawlContainer;
 window.onload = function () {
     let windowWidth = window.getComputedStyle(document.getElementById("star-wars")).width;
     document.getElementById("star-wars").style.maxWidth = windowWidth;
     document.getElementById("star-wars").style.minWidth = windowWidth;
-
-
-
 }

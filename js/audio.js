@@ -26,9 +26,9 @@ volume_slider.oninput = function () {
     var volume_slider = document.getElementById("volume_slider");
     audiofile.volume = volume_slider.value/10;
 
-    console.log('audiofile volume is ' + audiofile.volume);
+    // console.log('audiofile volume is ' + audiofile.volume);
     
-    console.log('slider value is ' + volume_slider.value);
+    // console.log('slider value is ' + volume_slider.value);
 }
 
 
