@@ -4,6 +4,7 @@ const numberOfParaInCollection = 5;
 var itCount = 0;
 
 
+
 document.getElementById("play_pause_button").addEventListener("click", play_pause);
 
 
@@ -15,9 +16,17 @@ function play_pause() {
             playAnimation();
             playAudio();
             
+            if (pauseStartTime == 0) startTime = new Date();
+            if(pauseStartTime != 0 ) pauseEndTime = new Date();    
+            console.log("start and end is " + pauseStartTime + " , " + pauseEndTime);   
+            pausedTime += pauseEndTime - pauseStartTime;
+
         } else {
             pauseAnimation();
             pauseAudio();
+            pauseStartTime = new Date();
+            console.log("start and end is " + pauseStartTime + " , " + pauseEndTime);   
+            
         }
     } else {
         window.alert("Файл с данни не е зареден или заредения файл не е в правилния формат.");

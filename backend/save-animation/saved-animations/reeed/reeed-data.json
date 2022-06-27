@@ -1,0 +1,16 @@
+{
+  "reports": [
+    {
+      "name": "LaTeX"
+    },
+    {
+      "name": "CSS Properties"
+    },
+    {
+      "name": "Animations"
+    },
+    {
+      "name": "HTTP 2.0"
+    }
+  ]
+}

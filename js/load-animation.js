@@ -18,10 +18,37 @@ function loadFiles(animationData) {
     const configPath = directoryPath + '/' + animationData['configFileName'];
     const dataPath = directoryPath + '/' + animationData['dataFileName'];
     const audioPath = directoryPath + '/' + animationData['audioFileName'];
+    const commentsPath = directoryPath + '/' + animationData['commentsFileName'];
 
     loadConfig(configPath);
     loadDataFile(dataPath);
     loadAudioFile(audioPath);
+    loadCommentsFile(commentsPath);
+}
+
+function loadCommentsFile(commentsPath){
+
+    const queryCommentsPath = encodeURIComponent('commentsPath') + '=' + encodeURIComponent(commentsPath);
+    fetch('./backend/load-animation/get-comments.php?' + queryCommentsPath)
+    .then(res => res.json())
+    .then(comments => postComments(comments.message));
+}   
+
+function postComments(comments){
+    clearComments();
+
+    console.log("comments posted: " + comments);
+    for (let i = 0; i < comments.length; i++) {
+       console.log(comments[i]["timestamp"] + " : " + comments[i]["commentText"]);
+        setTimeout(setComment(comments[i]["commentText"]), comments[i]["timestamp"]);
+    }
+
+
+}
+
+function clearComments(){
+
+    document.getElementById("comments-list").innerHTML = '';
 }
 
 function loadConfig(configPath) {
@@ -51,6 +78,23 @@ function loadAudioFile(audioPath) {
         document.getElementById('audio').load();
     });
 }
+
+
+function setComment(commentText) {
+    var temp = document.getElementById('comment-template');
+    var clon = temp.content.cloneNode(true);
+  
+    var comment = clon.firstElementChild;
+    var commentBoxValue = commentText;
+  
+    //actual comment
+    //comment.children[2] is the <p> element with actual comment text
+    comment.children[2].innerHTML = commentBoxValue;
+    document.getElementById("comments-list").appendChild(clon);
+    document.body.appendChild(clon);
+  
+  }
+  
 
 
 (() => {

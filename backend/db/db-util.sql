@@ -25,15 +25,16 @@ CREATE TABLE `animations` (
   `name` varchar(128) NOT NULL,
   `dataFileName` varchar(128) NOT NULL,
   `configFileName` varchar(128) NOT NULL,
-  `audioFileName` varchar(128) NOT NULL
+  `audioFileName` varchar(128) NOT NULL,
+  `commentsFileName` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `animations`
 --
 
-INSERT INTO `animations` (`name`, `dataFileName`, `configFileName`, `audioFileName`) VALUES
-('test-animation', 'test-animation-data.json', 'test-animation-config.json', 'starwars_audio.mp3');
+INSERT INTO `animations` (`name`, `dataFileName`, `configFileName`, `audioFileName`, `commentsFileName`) VALUES
+('test-animation', 'test-animation-data.json', 'test-animation-config.json', 'starwars_audio.mp3', 'test-comments.json');
 
 --
 -- Indexes for dumped tables

@@ -18,13 +18,41 @@ function getAnimtaionSettings() {
 function getAnimationInfo() {
     const name = document.getElementById("animation-name").value;
     const configData = getAnimtaionSettings();
+    const commentsData = getComments();
 
     const animationData = {
         name: name,
         configData: configData,
+        commentsData: commentsData,
     };
 
     return animationData;
+}
+
+function getComments() {
+    const comments = document.getElementById("comments-list");
+    var commentsData = [];
+
+
+    console.log("childElCount is " + comments.childElementCount);
+    //console.log("hopefully timestamp is " +  comments.children[0].children[2].innerHTML);
+    for(var i = 0; i<comments.childElementCount; i++){
+
+        var timestamp = comments.children[i].children[1].innerHTML;
+        var commentText = comments.children[i].children[2].innerHTML;
+
+        console.log("timestamp is " + timestamp + " comment: " + commentText );
+        
+        commentsData.push({
+            commentText: commentText, 
+            timestamp: timestamp,
+        });
+    }
+
+    console.log(commentsData);
+
+
+    return commentsData;
 }
 
 function validateName(animationName) {
@@ -70,11 +98,12 @@ function validateInput(animationName, dataFile, audioFile) {
     return true;
 }
 
-function prepareSaveData(animationData, inputFile, audioFile) {
+function prepareSaveData(animationData, inputFile, audioFile, commentsData) {
     const saveData = new FormData();
     saveData.append('animationData', JSON.stringify(animationData));
     saveData.append('inputFile', inputFile);
     saveData.append('audioFile', audioFile);
+    saveData.append('commentsData', commentsData);
     return saveData;
 
 }
@@ -82,6 +111,7 @@ function handleSaveAnimation() {
     const animationData = getAnimationInfo();
     const inputFile = document.getElementById('inputfile').files[0];
     const audioFile = document.getElementById('audiofile').files[0];
+    
 
     if(!validateInput(animationData['name'], inputFile, audioFile)) {
         return;
