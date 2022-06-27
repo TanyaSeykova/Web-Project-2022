@@ -34,7 +34,7 @@ CREATE TABLE `animations` (
 --
 
 INSERT INTO `animations` (`name`, `dataFileName`, `configFileName`, `audioFileName`, `commentsFileName`) VALUES
-('test-animation', 'test-animation-data.json', 'test-animation-config.json', 'starwars_audio.mp3', 'test-comments.json');
+('test-animation', 'test-animation-data.json', 'test-animation-config.json', 'starwars_audio.mp3', 'test-animation-comments.json');
 
 --
 -- Indexes for dumped tables
